@@ -13,10 +13,17 @@ const facts = [
 ]
 
 const date = new Date()
-const options = { weekday: "long" };
-const weeksDay = new Intl.DateTimeFormat("pl-PL", options).format(date);
-currentDay.textContent = weeksDay;
-funFact.textContent = facts[Math.floor(Math.random() * facts.length)]
+currentDay.textContent = new Intl.DateTimeFormat("pl-PL", { weekday: "long" }).format(date);
+
+const showRandomFact = () => {
+	const number = Math.floor(Math.random() * (facts.length - 1))
+	funFact.textContent = facts[number]
+}
+
+showRandomFact()
+
+
+
 
 
 
